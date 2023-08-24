@@ -1,0 +1,31 @@
+building a password Generator (RANDOM)
+
+
+
+
+variables -->
+passwordLength
+confirms
+
+var specialChars = ["+", "!", "#"]
+
+
+
+when the user clicks the generate password button --> how many characters would you like?
+
+we know confirms store boolean values!! 
+
+confirm to ask user if they would like special characters --> confirm 
+
+confirm to ask user if they would like numerical characters --> confirm
+
+confirm to ask user if they would like lowercase characters --> confirm
+
+confirm to ask user if they would like uppercase characters --> confirm
+
+
+
+how am i gonna build this?
+
+create function called generatePassword
+
