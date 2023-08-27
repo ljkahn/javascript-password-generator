@@ -1,8 +1,8 @@
 // Assignment code here
-var specialChars = ["+", "!", "#"];
-var numericChars = ["1", "2", "3",];
-var lowerCaseChar = ["a", "b", "c"];
-var upperCaseChar = ["A", "B", "C"];
+var specialChars = ["+", "!", "#", "$", "%", "^", "&", "*", "(",")"];
+var numericChars = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+var lowerCaseChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x","y", "z"];
+var upperCaseChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
 //A PROMPT FOR HOW MANY CHARACTERS THEY WANT
 
