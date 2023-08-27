@@ -14,83 +14,101 @@ var generateBtn = document.querySelector("#generate"); // storing a reference to
 
 //this functions purpose is getting a random element from an array
 
-function random(arr) {
+
+
+
+function generatePassword() {
+  //captures user length for password
+ var useCharsLength = prompt("How many characters would you like your password to contain? Pick a number between 8 and 128.");
+ if (useCharsLength< 8 || useCharsLength >128) {
+  prompt("Try Again!");
+ }
+ 
+ var useSpecialCharacters= confirm("Click OK to confirm including special characters.");
+
+ var useNumericCharacters= confirm("Click OK to confirm including numeric characters.");
+
+ var useLowerCaseCharacters= confirm("Click OK to confirm including lowercase characters.");
+
+ var useUpperCaseCharacters= confirm("Click OK to confirm including uppercase characters.");
+
+
+ //created an object for userOptions
+
+var userOptions = {
+willHaveSpecChars: useSpecialCharacters,
+willHaveNumChars: useNumericCharacters,
+willHaveLowChars:useLowerCaseCharacters,
+willHaveUppChars:useUpperCaseCharacters,
+
+
+
+
+};
+
+var password = [];
+if (userOptions.willHaveSpecChars) {
+  //lets randomly grab a member from the special characters array
+  //push into the result array
+  randomChar(specialChars);
+
+
+}
+
+var result = [];
+var possibleChars =[];
+
+function randomChar(arr) {
   //using Math.floor and Math.random --> pick one arrayy 
 // arr = ["+", "!", "#"]
 
 var randomIndex = Math.floor(Math.random() * arr.length);
+return arr[randomIndex];
 
 
 var randomChar = arr[randomIndex];
 
 } 
 
-
-function generatePassword() {
-  //captures user length for password
- var userCharsLength = prompt("How many characters would you like your password to contain?");
- if (userCharsLength< 8 || userCharsLength >128) {
-  prompt("Try Again!");
- }
- 
- var specialCharacters= confirm("Click OK to confirm including special characters.");
-
- var numericCharacters= confirm("Click OK to confirm including numeric characters.");
-
- var lowerCaseCharacters= confirm("Click OK to confirm including lowercase characters.");
-
- var upperCaseCharacters= confirm("Click OK to confirm including uppercase characters.");
-
-
- //created an object for userOptions
-
-var userOptions = {
-  length: userCharsLength,
-  willHaveSpecChars :specialCharacters,
-  willHaveNumChars: numericCharacters,
-  willHaveLowChars: lowerCaseCharacters,
-  willHaveUppChars: upperCaseCharacters
-
-
-
-}
-
-var password = [];
-if (userOptions.willHaveSpecChars) {
-  //lets randomly grab a member from the special characters array
-  //push into the result array
-  random(specialChars);
-
-
-}
-
 if (userOptions.willHaveNumChars) {
   //lets randomly grab a member from the numerical characters array
   //push into the result array
-  random(numericChars);
+possibleChars = possibleChars.concat(specialChars);
 
 
 }
 if (userOptions.willHaveLowChars) {
   //lets randomly grab a member from the lowercase characters array
   //push into the result array
-  random(lowerCaseChar);
+  possibleChars = possibleChars.concat(lowerCaseChar);
 
 }
 if (userOptions.willHaveUppChars) {
   //lets randomly grab a member from the uppercase characters array
   //push into the result array
-random(upperCaseChar);
+  possibleChars = possibleChars.concat(upperCaseChar);
   
 }
 
-
-
+for(i = 0; i <useCharsLength; i++) {
+  var selectedChar = randomChar (possibleChars);
+  console.log(selectedChar);
+  result.push(selectedChar);
 }
 
 
-//eventually this array will store the random generated password. i will use push method to add to this array and this is what i will return to the user.
 
+
+  // Construct the final password by joining the characters in the password array
+  var finalPassword = result.join(" ");
+
+  return finalPassword; // Return the generated password
+}
+
+
+
+
+//eventually this array will store the random generated password. i will use push method to add to this array and this is what i will return to the user.
 
 
 
