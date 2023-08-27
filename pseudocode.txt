@@ -28,4 +28,13 @@ confirm to ask user if they would like uppercase characters --> confirm
 how am i gonna build this?
 
 create function called generatePassword
+we are gong to need to use math.floor(), Math.random() functions
 
+
+var specialChars = ["+", "!", "#"]
+var numericChars = ["1", "2", "3",];
+
+
+we have the user input for char length, we have confirms of what chars they want in the Password
+
+---> now how do we generate a random password based on the length the user wants and the characters they chose
