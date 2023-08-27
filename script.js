@@ -41,15 +41,12 @@ willHaveNumChars: useNumericCharacters,
 willHaveLowChars:useLowerCaseCharacters,
 willHaveUppChars:useUpperCaseCharacters,
 
-
-
-
 };
 
 var password = [];
 if (userOptions.willHaveSpecChars) {
   //lets randomly grab a member from the special characters array
-  //push into the result array
+
   randomChar(specialChars);
 
 
@@ -72,20 +69,20 @@ var randomChar = arr[randomIndex];
 
 if (userOptions.willHaveNumChars) {
   //lets randomly grab a member from the numerical characters array
-  //push into the result array
+  //concat into the result array
 possibleChars = possibleChars.concat(specialChars);
 
 
 }
 if (userOptions.willHaveLowChars) {
   //lets randomly grab a member from the lowercase characters array
-  //push into the result array
+  //concat into the result array
   possibleChars = possibleChars.concat(lowerCaseChar);
 
 }
 if (userOptions.willHaveUppChars) {
   //lets randomly grab a member from the uppercase characters array
-  //push into the result array
+  //concat into the result array
   possibleChars = possibleChars.concat(upperCaseChar);
   
 }
